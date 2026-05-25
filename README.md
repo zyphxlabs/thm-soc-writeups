@@ -15,8 +15,8 @@ was done in a real lab environment.
 
 | Section | Topic | Status |
 |---------|-------|--------|
-| 01 | Blue Team Introduction | In Progress |
-| 02 | SOC Team Internals | Upcoming |
+| 01 | Blue Team Introduction | Complete |
+| 02 | SOC Team Internals | In Progress |
 | 03 | Core SOC Solutions | Upcoming |
 | 04 | Cyber Defence Frameworks | Upcoming |
 | 05 | Phishing Analysis | Upcoming |
