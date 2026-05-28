@@ -1,57 +1,53 @@
 # SOC L1 Alert Reporting — Writeup
 
 ## What This Room Was About
-This room taught me what happens after I triage an alert.
+This room was about what happens after alert triage.
 How to write a proper report, when to escalate to L2,
-and how to communicate in critical situations.
+and how to handle critical communication situations.
 
-## Three New Skills
+## What I Learned
 
 ### Alert Reporting
-Before closing or passing an alert to L2 I need to document my investigation.
-This is especially important for True Positives.
-A good report saves L2 time and preserves evidence for the future.
+Before closing or escalating I need to document my investigation.
+Most important for True Positives.
 
 Why reports matter:
-- Gives L2 context so they do not start from scratch
-- SIEM logs are deleted after 3-12 months but alerts are kept forever
-- Writing reports improves my own investigation skills
+- Saves L2 time — they get full context immediately
+- SIEM logs deleted after 3-12 months but alerts kept forever
+- Writing reports actually improves my own analysis skills
 
 ### The 5 Ws Framework
-Every alert report should answer these five questions:
-- Who — which user, account, or system is involved
-- What — what exact action or event happened
-- When — when did the suspicious activity start and end
-- Where — which device, IP address, or website was involved
+- Who — user, account, or system involved
+- What — exact action or event that happened
+- When — when the activity started and ended
+- Where — device, IP, or website involved
 - Why — my reasoning for the final verdict
 
-### Alert Escalation
-Escalate to L2 when:
-- The alert indicates a major cyberattack needing deeper investigation
-- Remediation is needed — malware removal, host isolation, password reset
-- Communication with management or law enforcement is required
-- I do not fully understand the alert and need senior help
+### When to Escalate to L2
+- Major cyberattack needing deeper investigation
+- Remediation needed — malware removal, host isolation, password reset
+- Communication with management or law enforcement required
+- I do not fully understand the alert
 
-How to escalate:
-1. Move alert to In Progress and investigate
-2. Write the alert report and set verdict
-3. Reassign alert to L2 on shift
+### How to Escalate
+1. Investigate and move to In Progress
+2. Write report and set verdict
+3. Reassign to L2 on shift
 4. Ping L2 in chat or in person
 
-### Communication Cases I Learned
-- L2 unavailable for 30 minutes on critical alert — call L2, then L3, then manager
-- Account compromise on Slack — do not use breached chat, call the user instead
-- Too many critical alerts at once — prioritise and inform L2 immediately
-- Realised I misclassified an alert days later — tell L2 immediately
-- SIEM logs not parsing — investigate what I can and report to L2
+### Critical Communication Scenarios
+- L2 unavailable on critical alert — call L2, then L3, then manager
+- Account compromised on Slack — never use breached chat, call the user
+- Too many alerts at once — prioritise correctly and inform L2
+- Misclassified alert days later — tell L2 immediately
+- SIEM logs not working — investigate what you can, report to L2
 
 ## What I Did in the Lab
-Opened the SOC dashboard and worked through real alert scenarios.
 Practiced writing alert reports using the 5 Ws framework.
-Investigated alerts and decided whether to escalate or close them.
+Worked through escalation scenarios on the SOC dashboard.
+Investigated alerts and made escalation decisions.
 
 ## My Key Takeaway
-Closing an alert as True Positive is just the start.
+Closing True Positive is just the start.
 A proper report and correct escalation is what actually stops the attack.
-Never skip reporting even if it feels like extra work.
-If I am unsure about anything escalate — always better to ask than miss a real attack.
+Always escalate when unsure — better to ask than miss a real breach.
