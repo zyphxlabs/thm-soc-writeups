@@ -1,55 +1,38 @@
-# SOC L1 Alert Triage — Writeup
+## How Alerts Are Even Created
 
-## What This Room Was About
-This room taught me how alerts are created, how to read them,
-and how to properly investigate and close them as a SOC L1 analyst.
+Before you can triage anything you need to understand where alerts come from. First an event happens — a login, a file download, a process running on a machine. The system logs it and sends it to a SIEM or EDR. The SIEM then checks if that event matches any detection rules it has, and if it does it creates an alert. This is what saves analysts from having to read through millions of raw logs every single day, the rules do the filtering and you just deal with what actually looks suspicious.
 
-## How Alerts Are Created
-First an event happens — a login, a file download, a process running.
-The system logs it and sends it to a SIEM or EDR.
-The SIEM checks if it matches any detection rules.
-If it does — it creates an alert.
-This saves analysts from reading millions of raw logs every day.
+## What an Alert Actually Contains
 
-## Alert Properties
-Every alert has these key fields:
+Every alert has a set of fields and you need to read all of them before doing anything:
+
 - Name — what happened
 - Time — when it happened
-- Severity — Low, Medium, High, Critical
-- Status — New, In Progress, Closed
+- Severity — Low, Medium, High, or Critical
+- Status — New, In Progress, or Closed
 - Verdict — True Positive or False Positive
-- Assignee — who is investigating it
-- Description — why this was flagged
-- Fields — affected user, hostname, command used
+- Assignee — who is currently investigating it
+- Description — why this event got flagged
+- Fields — affected user, hostname, command used, whatever is relevant
 
-## How to Pick Which Alert First
-1. Only pick New unassigned alerts
-2. Start with Critical severity then High then Medium then Low
-3. For same severity — take the oldest one first
+## Which Alert to Pick First
 
-## How to Triage an Alert
+When you open the dashboard and see a queue full of alerts you need to know where to start:
 
-Step 1 — Assign it to yourself and move to In Progress.
+- Only pick alerts that are New and unassigned
+- Start with Critical, then High, then Medium, then Low
+- If two alerts have the same severity, take the older one first
 
-Step 2 — Investigate:
-- Who is affected — user, hostname, device
-- What action triggered it
-- Look at events before and after the alert
-- Check threat intelligence tools like AbuseIPDB
+In the lab I opened the SOC dashboard and did exactly this — went through the queue, sorted by severity, and worked oldest to newest within the same level. Sounds simple but it matters a lot when you have ten alerts sitting there at once.
 
-Step 3 — Close it:
-- Decide True Positive or False Positive
-- Write a comment explaining what you found and why
-- Move to Closed
+## How to Actually Triage
 
-## What I Did in the Lab
-Opened the SOC dashboard.
-Reviewed the alerts in the queue.
-Prioritised by severity and time.
-Investigated each alert step by step.
-Closed them with correct verdicts and comments.
+First thing you do is assign the alert to yourself and move it to In Progress. This tells everyone else on the team that someone is already on it so nobody doubles up.
 
-## My Key Takeaway
-Missing a True Positive means a real attack goes undetected.
-Every step in triage exists for a reason.
-Always assign first, investigate properly, comment everything, then close.
+Then you investigate. You want to figure out who is affected — the user, hostname, device. What action actually triggered the alert. Look at the events right before and after to get context, because one event alone rarely tells the full story. Check threat intelligence tools like AbuseIPDB if there is an IP or domain involved.
+
+Once you have enough to make a call you close it. Decide if it is a True Positive or False Positive, write a comment explaining what you found and why you made that call, then move it to Closed. In the lab I closed each alert with a comment and a verdict after going through this exact process — the comment step feels small but it is what makes your work useful to anyone who looks at it later.
+
+## As an L1 Analyst
+
+Missing a True Positive means a real attack goes undetected and nobody even knows. Every step in this process exists for a reason — assign so there is no confusion, investigate properly so you do not miss anything, comment everything so L2 has context if it needs to go up. Triage sounds like a basic skill but done badly it is how attacks slip through completely unnoticed.
