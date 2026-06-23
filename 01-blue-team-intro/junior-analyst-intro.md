@@ -1,21 +1,25 @@
-# Junior Security Analyst Intro
-
 ## What is a SOC
 
-SOC stands for Security Operations Center basically its a team that protects a company 24/7, SOC analysts are the first one repsonding to an incident every day they are monitoring alerts investigating threats and stopping attacks.
+SOC stands for Security Operations Center, basically its a team that watches over a company's security 24/7. SOC analysts are the first ones responding when something goes wrong — every day they are monitoring alerts, investigating threats, and stopping attacks before they get worse.
 
-## SOC Team Roles
+## The Team and Who Does What
 
-The team has different roles like junior security analyst who monitors and investigates alerts daily, senior analyst who  handles the complex cases and helps junior analysts, SOC engineer is the one who develop and maintain the security tools to aid the team, SOC manager reports results to management and keeps the team on track, and incident responder only gets called in when something really major happens.
+The SOC isn't just one person doing everything, there are different roles and each one has its own job. junior security analyst is the entry level, monitors and investigates alerts daily. senior analyst handles the more complex cases and helps junior analysts when something is too big. SOC engineer is the one building and maintaining the tools the whole team depends on. SOC manager keeps everything on track and reports up to management. and then there's the incident responder who only gets called in when something really serious happens.
 
-## Daily Duties of a Junior Analyst
+## What a Junior Analyst Actually Does Day to Day
 
-As a junior analyst our daily job is to monitor and investigate security alerts, we also participate in SOC brainstorms  to solve different problems and cooperate with other teams, and we are constantly learning new attacks and defenses because this field keeps evolving.
+As a junior analyst the daily job is monitoring alerts and investigating anything that looks suspicious. you also sit in on SOC brainstorms to work through problems with the team and cooperate with other teams when needed. and because this field never stops changing you are constantly learning new attack techniques and new defenses, there is no point where you just know everything and stop.
 
-## What I Practiced in the Lab
+## Lab — Catching a Malicious Login
 
-I spotted a critical alert which was a successful SSH login from a suspicious IP 221.181.185.159, I looked it up on AbuseIPDB(tools) and it was confirmed malicious, the IP was from China Mobile and was involved in 4 cyber attacks, categories were Port Scan, C2 Server and PlugX malware so i escalated it to Will Griffin who is the SOC Team Lead, and while the senior analyst investigates i blocked the malicious IP 221.181.185.159 on the firewall to stop or slow down the attack.
+In the lab i spotted a critical alert, it was a successful SSH login from a suspicious IP `221.181.185.159`. looked it up on AbuseIPDB and it came back confirmed malicious — the IP belonged to China Mobile and had been involved in 4 cyber attacks, categories were Port Scan, C2 Server, and PlugX malware.
 
-## Key Lesson
+So i escalated it to Will Griffin who is the SOC Team Lead. while he was investigating i blocked the IP on the firewall to slow things down and stop any further damage.
 
-Failed login attempts are gernally not a big risk untill they are successful so weshould always escalate these but before escalating always check the IP reputation on tools like AbuseIPDB or Cisco Talos.
+## What I Took Away From This
+
+Failed login attempts on their own aren't a huge deal usually, but the moment one succeeds that changes everything. a successful login from a random external IP is worth escalating immediately. and before you escalate, always check the IP reputation first — tools like AbuseIPDB or Cisco Talos will tell you pretty fast whether its actually malicious or just noise.
+
+## As an L1 Analyst
+
+Your job isn't just to look at alerts and close them, its to actually understand what you are looking at. checking an IP takes two minutes and it tells you whether something is worth escalating or not. that habit alone makes you a much better analyst than someone who just clicks through alerts without thinking.
