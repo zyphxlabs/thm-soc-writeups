@@ -1,43 +1,47 @@
-# SOC Role in Blue Team
+## Security Priorities Change Per Company
 
-## Security Hierarchy
+Every company has different things they care about the most. a law firm wants to keep everything private, a hospital cares about patient safety above everything, and a factory just needs things to keep running without stopping. so the security priorities are not the same everywhere, they shift depending on what the company actually does.
 
-Every company has different things they care about the most, like a law firm cares about keeping things private, a hospital cares about patient safety, and a factory cares about keeping things running and available. so security priorities change depending on what the company does.
-
-the CEO is focused on the business side so they hire a CISO to handle all the security stuff, and the CISO then oversees all the security departments under them.
+The CEO is focused on running the business so they hire a CISO to handle all the security stuff. and the CISO then oversees all the security departments sitting under them.
 
 ## Security Departments
 
-There are different teams handling different sides of security
-
-- Red Team — offensive security, these are the ethical hackers and pentesters
+- Red Team — offensive security, ethical hackers and pentesters
 - GRC Team — handles policies and compliance stuff like PCI DSS
-- Blue Team — defensive security, this is where SOC analysts and incident responders sit
+- Blue Team — defensive security, SOC analysts and incident responders sit here
 
-## Blue Team Structure
+## Blue Team and How It's Structured
 
-The blue team is the one monitoring attacks and responding to them quickly, depending on the company size it can have anywhere from 3 to 50 members.
-inside the blue team the SOC is the first line of defense and handles most of the alerts and attacks that come in, it has different levels like L1 analyst who triages alerts and passes the complex ones to L2, L2 analyst who digs into the more advanced attacks, the engineer who configures tools like EDR and SIEM, and the manager who handles the whole SOC team.
-then there is the CIRT which only gets called when the SOC cannot handle the incident on their own, they deal with major breaches and they do it without depending on tools, examples of CIRTs are JPCERT, Mandiant and AWS CIRT.
-there are also some specialized roles in the blue team
+Blue team monitors attacks and responds to them fast. depending on how big the company is it can have anywhere from 3 to 50 people in it.
+
+Inside the blue team the SOC is the first line of defense. it has different levels — L1 analyst triages alerts and passes the harder ones to L2, L2 analyst digs into the more advanced attacks, engineer configures and maintains tools like EDR and SIEM, and the manager runs the whole SOC operation.
+
+Then there is CIRT which only gets called when the SOC alone cannot handle the incident, they deal with major breaches and don't depend on tools the same way. examples of these are JPCERT, Mandiant, and AWS CIRT.
+
+There are also more specialized roles inside the blue team:
 
 - Digital Forensics Analyst — uncovers hidden threats in disk and memory
-- Threat Intelligence Analyst — researches emerging threat groups
+- Threat Intelligence Analyst — researches new and emerging threat groups
 - AppSec Engineer — secures the software development lifecycle
 - AI Researcher — studies AI threats and defenses
 
 ## Internal SOC vs MSSP
 
-Internal SOC means you are protecting one single company, the pace is calmer, we  have fewer tools but we know them really deeply. MSSP is the opposite, we are protecting many clients at the same time, it is high pressure, we are dealing with many tools and you see a lot more incidents a lot faster.
-both are fine places to start but MSSP gives us way more exposure to real attacks early on which is valuable.
+Internal SOC means you are protecting one single company. pace is calmer, fewer tools but you get to know them really deeply. MSSP is the opposite, you are protecting many different clients at the same time, high pressure, many tools, way more incidents coming at you way faster.
 
-## SOC Career Path
+both are fine places to start but MSSP gives way more exposure to real attacks early on so you level up faster.
 
-we as a fresher start as L1 and as we gain experience we can move to L2 or go into a specialization, the options after L1 are L2 Analyst, SOC Engineer, CIRT, Threat Intel, or even the CISO path if we want to go that far.
+## Where You Go From L1
 
-four tips that actually matter as a SOC analyst
+You start as a fresher at L1 and from there the paths are L2 Analyst, SOC Engineer, CIRT, Threat Intelligence, or even the long road toward CISO.
 
-- learn from every single alert no matter how small
-- think like an attacker so you understand what they are doing
-- verify everything before you act on it
+Four things that actually matter if you want to grow:
+
+- learn from every alert no matter how boring or small it looks
+- think like an attacker so you actually understand what they are trying to do
+- verify everything before you act on it, assumptions get you in trouble
 - get involved in real incidents whenever you get the chance
+
+## As an L1 Analyst
+
+Understanding where you sit in the bigger picture actually matters. you are not just some person clicking through a dashboard, you are the first line of defense for the whole company. every alert you triage, every IP you check, every escalation you make is part of something much larger. the faster you understand that the faster you grow out of L1.
